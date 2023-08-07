@@ -7,9 +7,9 @@
 # чем Петя и Сережа вместе?
 
 total_item = int(input("Введите количество сделанных журавликов:\t"))
-katya = total_item // 2
+petya = (total_item//6)
+print(f"Петя сделал {petya} журавликов")
+katya = (total_item // 6)*4
 print(f"Катя сделала {katya} журавликов")
-petya = katya // 2
-print(f"Петя сделала {petya} журавликов")
-sergey = katya // 2
-print(f"Сережа сделала {sergey} журавликов")
+sergey = (total_item//6)
+print(f"Сережа сделал {sergey} журавликов")
