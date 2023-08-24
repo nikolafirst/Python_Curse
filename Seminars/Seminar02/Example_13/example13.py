@@ -11,14 +11,26 @@
 import random
 
 
-days = int (input("Введите количество дней:"))
-value = [random.randint(-50,50) for _ in range(days)]
-
-for i in range(len(value)):
-    
+days = int(input("Введите количество дней -> "))
 
 
+def count_total_day(all_count_day):
+    count_day = 0
+    max_day = count_day
+    for _ in range(all_count_day):
+        temp_day = random.randrange(-50, 50)
+        print(temp_day, end=" ")
+        if temp_day < 1:
+            if max_day < count_day:
+                max_day = count_day
+            count_day = 0
+        else:
+            count_day += 1
+    print(end="\n")
+    return max_day
 
-print(str(value).strip('[]'))
-print(sum(value))
 
+print(count_total_day(days))
+
+
+# while pos > 0:
