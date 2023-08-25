@@ -3,4 +3,7 @@
 # list_1 = [1, 2, 3, 4, 5]
 # k = 6
 # 5
+import random
 
+list_1 = [random.randint(1, 20) for _ in range(15)]
+k = 3
