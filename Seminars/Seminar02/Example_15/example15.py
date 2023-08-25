@@ -21,4 +21,22 @@ for i in amount:
         i += 1
 min = min(amount)
 
-print(f"Арбуз по тяжелее равен  {max} кг",'\n'f"Арбуз по легче равен {min} кг")
+print(f"Арбуз по тяжелее равен  {max} кг", "\n" f"Арбуз по легче равен {min} кг")
+
+"""
+def find_max_min_mass(count_watermelon):
+    max, min = 1, 21
+    for i in range(count_watermelon):
+        mass = random.randrange(1, 20)
+        print(mass, end=" ")
+        if max < mass:
+            max = mass
+        if min > mass:
+            min = mass
+    print(end="\n")
+    return min, max
+
+
+count_watermelon = int(input("Введите количество арбузов: "))
+print(find_max_min_mass(count_watermelon))
+"""

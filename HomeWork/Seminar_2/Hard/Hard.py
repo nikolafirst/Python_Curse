@@ -5,8 +5,9 @@
 # 89,126 -> 5
 # 0,001->4
 
+from decimal import Decimal
 
-num = float(input("Введите число: "))
+num = Decimal(input("Введите число: "))
 # n = (",")
 count = 0
 if num == 0:
