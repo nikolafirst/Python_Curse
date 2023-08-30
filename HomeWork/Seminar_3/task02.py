@@ -5,13 +5,14 @@
 # 5
 import random
 
-list_1 = [1, 12, 6, 7, 8, 15]
-k = 11
-n = 0
-for i in range(len(list_1)):
-    if (k - list_1[i]) < k - n and k - list_1[i] > 0:
-        n = i
-print(list_1[n])
+list_1 = [1, 12, 4, 7, 8, 15]
+k = 6
 
 
-# print(list_1)
+m = abs(k - list_1[0])  # модуль числа
+number = list_1[0]
+for i in range(1, len(list_1)):
+    if m > abs(list_1[i] - k):
+        m = abs(list_1[i] - k)
+        number = list_1[i]
+print(number)
