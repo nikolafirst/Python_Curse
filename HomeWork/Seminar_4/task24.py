@@ -14,3 +14,24 @@
 
 # 4 -> 1 2 3 4
 # 9
+
+
+def max_number_blueberries(berry_list):
+    max_number = 0
+    temp = 0
+    for i in range(0, len(berry_list)):
+        if i == 0:
+            temp = berry_list[-1] + berry_list[0] + berry_list[1]
+        elif i == len(berry_list) - 1:
+            temp = berry_list[0] + berry_list[-1] + berry_list[-2]
+        else:
+            temp = berry_list[i-1] + berry_list[i] + berry_list[i+1]
+        if temp > max_number:
+            max_number = temp
+    return max_number
+
+
+
+blueberries_list = [444,34,23,56,74,67,87,54,51,12,1123]
+
+print(max_number_blueberries(blueberries_list))

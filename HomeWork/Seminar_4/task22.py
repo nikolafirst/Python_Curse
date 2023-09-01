@@ -8,10 +8,27 @@
 # 2 4 6 8 10 12 10 8 6 4 2
 # 3 6 9 12 15 18
 # 6 12
-import random
 
-n_many = int(input("Введите первое кол-во множества: "))
-m_many = int(input("Введите второео кол-во множества: "))
 
-n = [n_many]
-print(n)
+def search_identical_numbers(list_1, list_2):
+    list_new = set()
+
+    for i in list_1:
+        for j in list_2:
+            if i == j:
+                list_new.add(i)
+    
+    print(*sorted(list_new))
+
+
+try:
+    n = int(input("Введите количество элементов первого множества: "))
+    m = int(input("Введите количество элементов второго множества: "))
+    list_n = []
+    list_m = []
+    for i in range(1, n + 1):
+        list_n.append(int(input(f"Введите элемент первого множества под номером {i}: "))) 
+    for i in range(1, m + 1):
+        list_m.append(int(input(f"Введите элемент второго множества под номером {i}: "))) 
+except:
+    print('Введено некорретное значение')
