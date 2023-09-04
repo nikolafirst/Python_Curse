@@ -10,25 +10,17 @@
 # 6 12
 
 
-def search_identical_numbers(list_1, list_2):
-    list_new = set()
+n = set()
+nCount = int(input('Введите кол-во элементов первого множества: '))
+for i in range(nCount):
+    n.add(input(f'Введите элемент под номером {i}: '))
+print(n)
 
-    for i in list_1:
-        for j in list_2:
-            if i == j:
-                list_new.add(i)
-    
-    print(*sorted(list_new))
+m = set()
+mCount = int(input('Введите кол-во элементов второго множества: '))
+for i in range(mCount):
+    m.add(input(f'Введите элемент {i}: '))
+print(m)
 
-
-try:
-    n = int(input("Введите количество элементов первого множества: "))
-    m = int(input("Введите количество элементов второго множества: "))
-    list_n = []
-    list_m = []
-    for i in range(1, n + 1):
-        list_n.append(int(input(f"Введите элемент первого множества под номером {i}: "))) 
-    for i in range(1, m + 1):
-        list_m.append(int(input(f"Введите элемент второго множества под номером {i}: "))) 
-except:
-    print('Введено некорретное значение')
+s_set = sorted(n.intersection(m))
+print(*s_set)
