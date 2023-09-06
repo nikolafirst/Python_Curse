@@ -18,8 +18,8 @@ print(n)
 
 m = set()
 mCount = int(input('Введите кол-во элементов второго множества: '))
-for i in range(mCount):
-    m.add(input(f'Введите элемент {i}: '))
+for j in range(mCount):
+    m.add(input(f'Введите элемент {j}: '))
 print(m)
 
 s_set = sorted(n.intersection(m))
