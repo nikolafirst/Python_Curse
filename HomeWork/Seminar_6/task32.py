@@ -6,3 +6,18 @@
 # 33
 # 200
 # Ответ: [2, 3]
+
+def find_index_in_range(arr, min_value, max_value):
+    index = []
+    for i, num in enumerate(arr):
+        if num >= min_value and num <= max_value:
+            index.append(i)
+    return index
+
+arr = [1, 5, 88, 100, 2, -4]
+min_value = 33
+max_value = 200
+
+index = find_index_in_range(arr, min_value, max_value)
+
+print("Ответ:", index)
