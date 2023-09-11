@@ -17,7 +17,9 @@ def arithmetic_progression(a1, d, n):
 
 a1 = int(input("Введите первый элемент арифметической прогрессии: "))
 d = int(input("Введите разность: "))
-n = int(input("Введите количество элементов: "))  # насколько я понял подразумевается количество элементов в массиве
+n = int(
+    input("Введите количество элементов: ")
+)  # насколько я понял подразумевается количество элементов в массиве
 
 print(arithmetic_progression(a1, d, n))
 
@@ -26,7 +28,7 @@ print(arithmetic_progression(a1, d, n))
 
 # заполнение массива элементами арифметической прогрессии
 # for i in range(n):
-    # arithmetic_progression[i] = a1 + i * d
+# arithmetic_progression[i] = a1 + i * d
 
 # вывод массива
 # print("Массив арифметической прогрессии:", arithmetic_progression)
