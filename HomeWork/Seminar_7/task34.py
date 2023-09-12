@@ -10,10 +10,10 @@
 # **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да    
 #     **Вывод:** Парам пам-пам
 
-def checkSlogVini(stroka):
-    stroka = stroka.split()
+def checkText(str):
+    str = str.split()
     list = []
-    for word in stroka:
+    for word in str:
         result = 0
         for i in word:
             if i in 'аеёиоуыэюя':
@@ -21,8 +21,8 @@ def checkSlogVini(stroka):
         list.append(result)
     return len(list) == list.count(list[0])
 
-inputStih = input("Введите стих: ")
-if checkSlogVini(inputStih):
+inputText = input("Введите стих: ")
+if checkText(inputText):
     print('Парам пам-пам')
 else:
     print('Пам парам')
