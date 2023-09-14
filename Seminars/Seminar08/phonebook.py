@@ -1,18 +1,8 @@
-# elif choice == "Загрузить БД": # если выбрали этот пункт
-#             # загрузить из json
-#             fname=fileopenbox('Выберите файл формата JSON') # открываем файл
-#             with open(fname, 'r', encoding='utf-8') as fh: # открываем файл а чтение
-#                 BD = json.load(fh) # загружаем из файла данные в словарь data
-#             print ('БД успешно загружена')
-#             loaded = True # меняем флаг загрузки БД
-#         elif choice == 'Сохранить БД':# если выбрали этот пункт
-#             # сохранить в json
-#             with open ('BD.json', 'w', encoding='utf-8') as fh: # открываем файл на запись
-#                 fh.write(json.dumps(BD, ensure_ascii = False)) # преобразовываем словарь data в unicode - строку и записываем в файл
-#                 print('БД успешно сохранена')
 
 sp = {'дядя коля': {'номер телефона': ['8-800-555-35-35', '8-900-536-35-35'], 'город': 'Сыктывкар', 'Статус': 'дядя'}, 
-      'нюрка': {'номер телефона': ['8-555-549-34-35'], 'город': 'Сыктыфкар', 'Статус': 'тетя'}}
+      'нюрка': {'номер телефона': ['8-555-549-34-35'], 'город': 'Сыктывкар', 'Статус': 'тетя'}}
+
+print('Добро пожаловать в телефонный справочник. \n Доступные команды:\n /all - показать список контактов, \n /add.contact - добавить контакт, \n /add.number - добавить номер к существующему контакту, \n /delete.contact - удалить контакт')
 
 while True:
     command = input('Введите команду: ')
@@ -36,9 +26,9 @@ while True:
             sp[name] = {'номер телефона': numbers, 'город': city, 'Статус': status}
 
     if command == '/add.number':
-        name = input('Введите имя нового контакта: ')
+        name = input('Введите имя контакта: ')
         if name not in sp:
-            print('Контакта не существует!!!')
+            print('Контакт не существует!!!')
         else :
             phone = input('Введите номер: ')
             if phone in sp [name]['номер телефона']:
@@ -46,11 +36,40 @@ while True:
             else:
                 sp [name]['номер телефона'].append(phone)
 
+    if command == '/delete.contact':
+        name = input('Введите имя контакта: ')
+        if name not in sp:
+            print('Контакт не существует!!!')
+        else:
+            del sp[name]
+
+    # if command == '/delete.number':
+    #     name = input('Введите имя контакта для изменения номера: ')
+    #     if name not in sp:
+    #         print('Такой записи в справочнике нет!!!')
+    #     else :
+    #         phone = input('Введите номер: ')
+    #         if phone in sp [phone]['номер телефона']:
+    #             print('Номер существует')
+    #         else:
+    #             sp [phone]['номер телефона'].pop(phone)
+    
+    if command == '/modify.contact':
+        name = input('Введите имя контакта для внесения изменений: ')
+        # if name not in sp:
+        #     print('Контакт не существует!!!')
+        new_number = input('Введите новый номер: ')
+        new_city = input('Введите новый город: ')
+        new_status = input('Введите новый статус: ')
+        sp[name] = {'номер телефона': new_number, 'город': new_city, 'Статус': new_status}
+        
+
+
        
-       
-       
-    #     sp.append(f)
-    #     print('Контакт добавлен!')
+
+
+
+
     # elif command == '/help':
     #     print('Здесь какойто мануал')
 
